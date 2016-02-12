@@ -7,3 +7,4 @@ module:
 - Guides: a guide to job
 - manage user
 - manage RBAC
+- use yii2-dynagrid
