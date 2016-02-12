@@ -6,3 +6,4 @@ module:
 - Work: contains schedules and job information 
 - Guides: a guide to job
 - manage user
+- manage RBAC
