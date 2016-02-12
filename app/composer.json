@@ -1,0 +1,76 @@
+{
+    "name": "yiisoft/yii2-app-basic",
+    "description": "Yii 2 Basic Application Template",
+    "keywords": ["yii2", "framework", "basic", "application template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "2.0.*",
+        "yiisoft/yii2-bootstrap": "2.0.*",
+        "yiisoft/yii2-swiftmailer": "*",
+        "yiisoft/yii2-redis": "^2.0",
+        "boehsermoe/yii2-neo4j": "*",
+        "neoxygen/neoclient": "^3.1@dev",
+        "amnah/yii2-user": "^4.0",
+        "dektrium/yii2-user": "0.9.*@dev",
+        "dektrium/yii2-rbac": "dev-master",
+        "yiisoft/yii2-mongodb": "~2.0.0",
+        "edgardmessias/yii2-nprogress": "*",
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "zxbodya/yii2-elfinder": "*@dev",
+        "mihaildev/yii2-elfinder": "*",
+        "mihaildev/yii2-ckeditor": "*",
+        "synatree/yii2-dynamic-relations": "dev-master",
+        "kartik-v/yii2-helpers": "dev-master",
+        "kartik-v/yii2-grid": "@dev",
+        "kartik-v/yii2-mpdf": "*",
+        "kartik-v/yii2-dynagrid": "@dev",
+        "warrence/yii2-kartikgii": "dev-master",
+        "liyunfang/yii2-contextmenu": "^1.0",
+        "linslin/yii2-curl": "^1.0",
+        "2amigos/yii2-tinymce-widget": "~1.1",
+        "alexandernst/yii2-device-detect": "*"
+    },
+    "require-dev": {
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-faker": "*"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+                "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [{
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                    "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
